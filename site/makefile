@@ -8,8 +8,13 @@ PYPROJECT ?= pyproject.toml
 all: help
 
 .PHONY: build
-build: pip  ## generate 1ma2 site
-	$(VIRTUAL_PYTHON) -m 1ma2 public
+build: $(VIRTUALENV_DIR)/.pip.log ## generate 1ma2 site
+	$(VIRTUAL_PYTHON) -m 1ma2 build public
+
+.PHONY: serve
+serve: $(VIRTUALENV_DIR)/.pip.log ## serve 1ma2 site
+	$(VIRTUAL_PYTHON) -m 1ma2 serve
+
 
 .PHONY: pip
 pip: $(PYPROJECT) $(PIP) ## install dependencies
