@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "1ma2"
+version = "0.0.1"
+authors = [
+  { name="Example Author", email="author@example.com" },
+]
+description = "1 Million Ann Arborites"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+	"python-dateutil",
+    "Jinja2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["1ma2"]
+
+[project.urls]
+"Homepage" = "https://1ma2.com"
+"Bug Tracker" = "https://github.com/dadrian/1ma2/issues"
